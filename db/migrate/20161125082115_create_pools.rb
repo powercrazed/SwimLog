@@ -3,7 +3,7 @@ class CreatePools < ActiveRecord::Migration
     create_table :pools do |t|
       t.string :name
       t.string :location
-      t.integer :size
+      t.integer :length
 
       t.timestamps null: false
     end

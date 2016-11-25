@@ -11,7 +11,7 @@
   <table class="table table-stripped">
     <thead>
       <tr>
-        <th>Start</th>
+        <th>When</th>
         <th>Duration</th>
         <th>Distance (m)</th>
         <th colspan="3" class="fit"></th>
@@ -21,7 +21,7 @@
     <tbody>
       <% @swims.each do |swim| %>
         <tr>
-          <td><%= swim.start %></td>
+          <td><%= swim.when %></td>
           <td><%= swim.duration %></td>
           <td><%= swim.distance %></td>
           <td class="fit"><%= link_to 'Show', swim %></td>

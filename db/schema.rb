@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20161125082115) do
   create_table "pools", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.integer  "size"
+    t.integer  "length"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "swims", force: :cascade do |t|
-    t.datetime "start"
+    t.datetime "when"
     t.integer  "duration"
     t.integer  "distance"
     t.datetime "created_at", null: false

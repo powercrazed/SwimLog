@@ -1,7 +1,7 @@
 class CreateSwims < ActiveRecord::Migration
   def change
     create_table :swims do |t|
-      t.datetime :start
+      t.datetime :when
       t.integer :duration
       t.integer :distance
 
