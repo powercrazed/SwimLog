@@ -24,9 +24,9 @@
           <td><%= pool.name %></td>
           <td><%= pool.location %></td>
           <td><%= pool.length %></td>
-          <td class="fit"><%= link_to 'Show', pool %></td>
-          <td class="fit"><%= link_to 'Edit', edit_pool_path(pool) %></td>
-          <td class="fit"><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="fit"><%= link_to 'Show', pool, class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Edit', edit_pool_path(pool), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Destroy', pool, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

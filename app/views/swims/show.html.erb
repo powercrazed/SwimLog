@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Showing Swim - <%= h @swim.id %></h1>
 
-<p>
-  <strong>When:</strong>
-  <%= @swim.when %>
-</p>
+  <% if notice %>
+    <div id="notice" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @swim.duration %>
-</p>
+  <hr />
+  <dl class="dl-horizontal">
+    <dt>When:</dt>
+    <dd><%= @swim.when %></dd>
+    <dt>Duration:</dt>
+    <dd><%= @swim.duration %></dd>
+    <dt>Distance (m):</dt>
+    <dd><%= @swim.distance %></dd>
+  </dl>
+  <hr />
 
-<p>
-  <strong>Distance:</strong>
-  <%= @swim.distance %>
-</p>
+  <%= link_to 'Edit', edit_swim_path(@swim), class: "btn btn-primary" %>
+  <%= link_to 'Back', swims_path, class: "btn btn-primary" %>
+</div>
 
-<%= link_to 'Edit', edit_swim_path(@swim) %> |
-<%= link_to 'Back', swims_path %>
+<%= debug @swim %>

@@ -1,29 +1,45 @@
-<%= form_for(@swim) do |f| %>
-  <% if @swim.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</h2>
+<% if @swim.errors.any? %>
+<div id="error_explanation" class="alert alert-danger alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</strong>
 
-      <ul>
-      <% @swim.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <ul>
+    <% @swim.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!-- horizontal form -->
+<%= form_for @swim, :html => {:class => "form-horizontal"} do |f| %>
+
+  <div class="form-group">
+      <%= f.label :when, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.datetime_local_field :when, class: "form-control" %>
     </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :when %><br>
-    <%= f.datetime_select :when %>
+  <div class="form-group">
+    <%= f.label :duration, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.text_field :duration, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.number_field :duration %>
+
+  <div class="form-group">
+    <%= f.label :distance, class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-10 col-sm-4">
+      <%= f.number_field :distance, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :distance %><br>
-    <%= f.number_field :distance %>
+
+  <div class="actions form-group">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-2">
+      <%= f.submit "Submit", class: "btn btn-success" %>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

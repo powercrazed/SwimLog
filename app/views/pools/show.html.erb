@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Showing Pool - <%= h @pool.id %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pool.name %>
-</p>
+  <% if notice %>
+    <div id="notice" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Location:</strong>
-  <%= @pool.location %>
-</p>
+  <hr />
+  <dl class="dl-horizontal">
+    <dt>Name:</dt>
+    <dd><%= @pool.name %></dd>
+    <dt>Location:</dt>
+    <dd><%= @pool.location %></dd>
+    <dt>Length (m):</dt>
+    <dd><%= @pool.length %></dd>
+  </dl>
+  <hr />
 
-<p>
-  <strong>Length (m):</strong>
-  <%= @pool.length %>
-</p>
+  <%= link_to 'Edit', edit_pool_path(@pool), class: "btn btn-primary" %>
+  <%= link_to 'Back', pools_path, class: "btn btn-primary" %>
+</div>
 
-<%= link_to 'Edit', edit_pool_path(@pool) %> |
-<%= link_to 'Back', pools_path %>
+<%= debug @pool %>

@@ -24,9 +24,9 @@
           <td><%= swim.when %></td>
           <td><%= swim.duration %></td>
           <td><%= swim.distance %></td>
-          <td class="fit"><%= link_to 'Show', swim %></td>
-          <td class="fit"><%= link_to 'Edit', edit_swim_path(swim) %></td>
-          <td class="fit"><%= link_to 'Destroy', swim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="fit"><%= link_to 'Show', swim, class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Edit', edit_swim_path(swim), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Destroy', swim, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>
