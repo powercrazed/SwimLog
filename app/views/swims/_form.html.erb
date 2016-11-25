@@ -1,0 +1,29 @@
+<%= form_for(@swim) do |f| %>
+  <% if @swim.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@swim.errors.count, "error") %> prohibited this swim from being saved:</h2>
+
+      <ul>
+      <% @swim.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.datetime_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.number_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br>
+    <%= f.number_field :distance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
