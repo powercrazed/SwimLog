@@ -31,7 +31,10 @@
   <div class="form-group">
     <%= f.label :length, class: "col-xs-12 col-sm-2 control-label" %>
     <div class="col-xs-10 col-sm-4">
-      <%= f.number_field :length, class: "form-control" %>
+      <div class="input-group">
+        <%= f.number_field :length, class: "form-control" %>
+        <span class="input-group-addon">m</span>
+      </div>
     </div>
   </div>
 
