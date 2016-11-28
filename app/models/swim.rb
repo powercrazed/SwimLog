@@ -11,4 +11,8 @@ class Swim < ActiveRecord::Base
   def duration_string=(duration_str)
     self.duration = Time.parse(duration_str).seconds_since_midnight
   end
+
+  def avg_speed
+    (self.distance.to_f / self.duration.to_f).round(3)
+  end
 end
