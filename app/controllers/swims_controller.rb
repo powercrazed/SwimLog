@@ -69,6 +69,6 @@ class SwimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def swim_params
-      params.require(:swim).permit(:when, :duration, :distance, :pool_id)
+      params.require(:swim).permit(:when, :duration, :duration_string, :distance, :pool_id)
     end
 end
