@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125082115) do
+ActiveRecord::Schema.define(version: 20161128092541) do
 
   create_table "pools", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20161125082115) do
     t.integer  "distance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "pool_id"
   end
+
+  add_index "swims", ["pool_id"], name: "index_swims_on_pool_id"
 
 end
