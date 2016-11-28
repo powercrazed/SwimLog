@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# add chartkick for graphing see chartkick.com
+gem 'chartkick'
 
 # add bootstrap support
 gem 'bootstrap-sass', '~> 3.2.0'
