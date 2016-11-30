@@ -3,7 +3,15 @@ class DashboardController < ApplicationController
   # GET /
   def index
     @swims = Swim.all
-    @swims25 = Swim.joins(:pool).where("length = 25")
-    @swims50 = Swim.joins(:pool).where("length = 50")
+
+    pool_lengths = Pool.uniq.pluck(:length)
+    @swimsbypool = []
+    pool_lengths.each do |pl|
+      @swimsbypool.push(
+        name: "#{pl}m",
+        data: Swim.joins(:pool).where("length = #{pl}").map { |swim| [swim.when, swim.avg_speed] }.to_h
+      )
+    end
+
   end
 end
