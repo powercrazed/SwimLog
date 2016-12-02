@@ -1,0 +1,1 @@
+json.array! @swims, partial: 'swims/swim', as: :swim

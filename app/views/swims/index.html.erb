@@ -1,0 +1,40 @@
+<div class="container">
+  <% if notice %>
+    <div id="notice" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= notice %>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Where</th>
+        <th>Duration</th>
+        <th>Distance</th>
+        <th>Avg Speed</th>
+        <th colspan="3" class="fit"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @swims.each do |swim| %>
+        <tr>
+          <td><%= swim.when %></td>
+          <td><%= swim.pool.name %></td>
+          <td><%= swim.duration_string %></td>
+          <td><%= swim.distance %>m</td>
+          <td><%= swim.avg_speed %>m/s</td>
+          <td class="fit"><%= link_to 'Show', swim, class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Edit', edit_swim_path(swim), class: "btn btn-primary" %></td>
+          <td class="fit"><%= link_to 'Destroy', swim, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New Swim', new_swim_path, class: "btn btn-primary" %>
+</div>

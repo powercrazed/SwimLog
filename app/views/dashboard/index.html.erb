@@ -1,0 +1,9 @@
+<div class="container">
+  <!-- average speed vs day -->
+  <h1>All swims</h1>
+  <%= line_chart @swims, id: "avergage-speed", xtitle: "Date", ytitle: "Average Speed (m/s)", min: nil %>
+
+  <!-- average speed vs day with series for each pool length -->
+  <h1>Swims by pool length</h1>
+  <%= line_chart @swimsbypool, id: "avergage-speed-by-pool", xtitle: "Date", ytitle: "Average Speed (m/s)", min: nil %>
+</div>
