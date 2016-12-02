@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
 
   # GET /
   def index
-    @swims = Swim.all
+    @swims = Swim.all.map { |swim| [swim.when, swim.avg_speed]  }.to_h
 
     pool_lengths = Pool.uniq.pluck(:length)
     @swimsbypool = []

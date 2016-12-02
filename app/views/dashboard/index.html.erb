@@ -1,7 +1,7 @@
 <div class="container">
   <!-- average speed vs day -->
   <h1>All swims</h1>
-  <%= line_chart @swims.map { |swim| [swim.when, swim.avg_speed]  }.to_h, id: "avergage-speed", xtitle: "Date", ytitle: "Average Speed (m/s)" %>
+  <%= line_chart @swims, id: "avergage-speed", xtitle: "Date", ytitle: "Average Speed (m/s)" %>
 
   <!-- average speed vs day with series for each pool length -->
   <h1>Swims by pool length</h1>
