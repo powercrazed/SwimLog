@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'chartkick'
 
 # add bootstrap support
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
