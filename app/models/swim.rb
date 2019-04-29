@@ -1,4 +1,4 @@
-class Swim < ActiveRecord::Base
+class Swim < ApplicationRecord
   validates :when, :duration, :distance, :pool, presence: true
   validates :when, uniqueness: true
 
